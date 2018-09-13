@@ -1,0 +1,79 @@
+// Name:            Player
+// Description:     Component to create player
+//
+// Component:       `player`
+//
+// Sub-objects:     `player-title`
+//==========================================================
+
+// Variables
+// =========================================================
+
+
+
+.grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "menu"
+    "main"
+    "sidebar"
+    "controls";
+  grid-template-columns: 100%;
+  grid-template-rows:
+    100px
+    300px 
+    1fr
+    50px
+    50px;
+  grid-gap: 6px 0px;
+  height: calc(100vh - 12px); /* 2x the gap */
+}
+
+.grid > * {
+  display:grid;
+}
+
+.grid p {
+  justify-self: center;
+  align-self: center;
+}
+
+.grid_header { 
+  background-color: #FEBAC5;
+  grid-area: header; 
+}
+.grid_main {
+  background-color: #C2EAE9;
+  grid-area: main; 
+}
+.grid_menu { 
+  background-color: #FACFD7;
+  grid-area: menu;
+
+}
+.grid_sidebar { 
+  background-color: #6CD1EA;
+  grid-area: sidebar;
+}
+.grid_controls {
+  background-color: #444444;
+  grid-area: controls;
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    grid-template-areas:
+      "header header header"
+      "menu main sidebar"
+      "controls controls controls"
+      "controls-sub controls-sub controls-sub";
+    grid-template-columns:
+      0px 1fr 0px;
+    grid-template-rows:
+      0px
+      1fr
+      120px;
+  }
+}
+/* https://codepen.io/bunnyhawk/pen/wJgdQb */

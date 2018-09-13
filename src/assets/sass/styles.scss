@@ -1,0 +1,64 @@
+//
+// Main SCSS file
+//
+
+/*-----------*/
+/*  VENDOR   */
+/*-----------*/
+@import '00_vendor/placeholder';
+
+
+/*-----------*/
+/*  CONFIG   */
+/*-----------*/
+@import '01_abstract/settings/config';
+
+
+/*-----------*/
+/*  MIXINS   */
+/*-----------*/
+@import '01_abstract/mixins/mixins_general';
+@import '01_abstract/mixins/mixins_breakpoints';
+@import '01_abstract/mixins/mixins_grids';
+@import '01_abstract/mixins/mixins_flexbox';
+
+
+/*---------*/
+/*  BASE   */
+/*---------*/
+@import '02_base/reset';
+@import '02_base/helper_classes';
+@import '02_base/typography';
+@import '../fonts/icomoon/style';
+
+
+/*------------*/
+/*  ELEMENT   */
+/*------------*/
+@import '03_element/placeholder';
+
+
+/*--------------*/
+/*  COMPONENT   */
+/*--------------*/
+@import '04_component/_player';
+
+
+/*-----------*/
+/*  LAYOUT   */
+/*-----------*/
+@import '05_layout/_header';
+@import '05_layout/_section';
+@import '05_layout/_footer';
+
+
+/*---------*/
+/*  PAGE   */
+/*---------*/
+@import '06_page/_index';
+
+
+/*----------*/
+/*  THEME   */
+/*----------*/
+@import '07_theme/_placeholder';

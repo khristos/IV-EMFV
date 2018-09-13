@@ -1,0 +1,29 @@
+//
+//-- Config
+//
+
+// colors
+$color-base: #15263e;
+$color-base-light: #374362;
+$color-secondary: #bbb;
+$color-secondary-rgba: rgba(187, 187, 187, .7);
+$color-secondary-light: #ededed;
+$color-gradient1: #c00;
+$color-gradient1-rgba: rgba(204, 0, 0, .8);
+$color-gradient2: #470000;
+$color-gradient2-rgba: rgba(71, 0, 0, .8);
+$color-state: green;
+
+
+// widths
+$smallest-width: 20em; // 320px
+$very-small-width: 30em; // 480px/16 --> 30em;
+$small-width: 48em; // 768px
+$medium-width: 60em; // 960px
+$large-width: 75em; // 1200px
+$very-large-width: 100em; //1600px
+
+$site-width: 75em;
+
+// font
+$url: 'https://fonts.googleapis.com/css?family=Overpass';
