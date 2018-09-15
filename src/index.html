@@ -8,19 +8,75 @@
 	<title>Illustrated Verdict | Electronic Fetal Monitoring Viewer</title>
 </head>
 <body>
-	<div id="container">
-		<div class="grid player">
+	<div class="container">
+		<div class="player__grid player">
 			<header class="grid_header"></header>
-			<main class="grid_main player__screen">
-				<p>Main Content</p>
-			</main>
+			<div class="grid_main player__screen">
+				<ul class="player__scan-collection">
+					<li class="player__screen-item"><img src='packages/strip/4547fs_1.jpg' alt=''/></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_1.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_2.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_3.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_4.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_5.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_6.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_7.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_8.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_9.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_10.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_11.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_12.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_13.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_14.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_15.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_16.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_17.jpg" alt=""></li>
+					<li class="player__scan-item"><img src="packages/strip/4547fs_18.jpg" alt=""></li>
+				</ul>
+				
+				<div role="slider" aria-valuenow="4" aria-valuemin="1" aria-valuemax="10"></div>
+			</div>
 			<aside class="grid_menu player__menu"></aside>
 			<aside class="grid_sidebar player__sidebar"></aside>
-			<section class="grid_controls player__controls">
-				<p>Controls</p>
-			</section>
+			<div class="grid_controls player__controls">
+				<div class="player__timeline flex-center">
+					<div class="player__time">
+						<output for="player__seek-bar" id="player__time-elapsed">0</output>
+						<label for="player__seek-bar">&nbsp;/&nbsp;</label>
+						<output for="player__seek-bar" id="player__time-total">0</output>
+					</div>
+					<input type="range"
+						id="player__seek-bar" 
+						class="player__seek-bar"
+						list="tick-values"
+						min="0"
+						max="100"
+						value="0"
+						step="0.1"
+						aria-valuemin="1"
+						aria-valuemax="100"
+						aria-valuenow="0"
+						oninput="outputUpdate(value)">
+						<datalist id="tick-values">
+							<option value="10" label="Low">
+							<option value="90" label="High">
+						</datalist>
+				</div>
+				<div class="player__buttons flex-center">
+					<div id="player__previous" class="player__previous">
+						<button><span class="icon-previous2"></span></button>
+					</div>
+					<div id="player__play" class="player__play">
+						<button><span class="icon-play3"></span></button>
+					</div>
+					<div id="player__next" class="player__next">
+						<button><span class="icon-next2"></span></button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/component/efm_player.js"></script>
 </body>
 </html>

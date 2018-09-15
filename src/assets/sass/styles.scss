@@ -6,7 +6,7 @@
 /*  VENDOR   */
 /*-----------*/
 @import '00_vendor/placeholder';
-
+@import '../fonts/icomoon/style';
 
 /*-----------*/
 /*  CONFIG   */
@@ -29,7 +29,7 @@
 @import '02_base/reset';
 @import '02_base/helper_classes';
 @import '02_base/typography';
-@import '../fonts/icomoon/style';
+@import '02_base/helper_forms';
 
 
 /*------------*/

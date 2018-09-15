@@ -31,3 +31,7 @@
 	max-width: $site-width;
 	box-shadow:	rgba(0, 0, 0, 0.08) 0px 5px 15px;;
 }
+
+.flex-center {
+	@include flex-center;
+}
