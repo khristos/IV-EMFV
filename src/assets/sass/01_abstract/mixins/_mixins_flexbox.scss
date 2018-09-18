@@ -107,7 +107,7 @@
 // - applies to: flex containers
 // flex-start | flex-end | center | space-between | space-around 
 @mixin justify-content($value: flex-start) {
-  -ms-flex-pack: $value;
+  justify-content: $value;
 }
 /*
 .container {

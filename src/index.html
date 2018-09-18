@@ -10,9 +10,9 @@
 <body>
 	<div class="container">
 		<div class="player__grid player">
-			<header class="grid_header"></header>
-			<div class="grid_main player__screen">
-				<ul class="player__scan-collection">
+			<header class="player__header"></header>
+			<div class="player__screen">
+				<ul class="player__screen-collection">
 					<li class="player__screen-item"><img src='packages/strip/4547fs_1.jpg' alt=''/></li>
 					<li class="player__scan-item"><img src="packages/strip/4547fs_1.jpg" alt=""></li>
 					<li class="player__scan-item"><img src="packages/strip/4547fs_2.jpg" alt=""></li>
@@ -33,44 +33,48 @@
 					<li class="player__scan-item"><img src="packages/strip/4547fs_17.jpg" alt=""></li>
 					<li class="player__scan-item"><img src="packages/strip/4547fs_18.jpg" alt=""></li>
 				</ul>
-				
-				<div role="slider" aria-valuenow="4" aria-valuemin="1" aria-valuemax="10"></div>
 			</div>
-			<aside class="grid_menu player__menu"></aside>
-			<aside class="grid_sidebar player__sidebar"></aside>
-			<div class="grid_controls player__controls">
-				<div class="player__timeline flex-center">
-					<div class="player__time">
+			<aside class="player__menu"></aside>
+			<aside class="player__sidebar"></aside>
+			<div class="player__controls">
+				<div class="player__timeline flex-center row">
+					<div class="player__time column">
 						<output for="player__seek-bar" id="player__time-elapsed">0</output>
-						<label for="player__seek-bar">&nbsp;/&nbsp;</label>
+						<label for="player__seek-bar">/</label>
 						<output for="player__seek-bar" id="player__time-total">0</output>
 					</div>
-					<input type="range"
-						id="player__seek-bar" 
-						class="player__seek-bar"
-						list="tick-values"
-						min="0"
-						max="100"
-						value="0"
-						step="0.1"
-						aria-valuemin="1"
-						aria-valuemax="100"
-						aria-valuenow="0"
-						oninput="outputUpdate(value)">
-						<datalist id="tick-values">
-							<option value="10" label="Low">
-							<option value="90" label="High">
-						</datalist>
+
+					<div class="column">
+						<input type="range"
+							id="player__seek-bar" 
+							class="player__seek-bar"
+							list="tick-values"
+							min="0"
+							max="100"
+							value="0"
+							step="0.1"
+							aria-valuemin="1"
+							aria-valuemax="100"
+							aria-valuenow="0"
+							oninput="outputUpdate(value)">
+							<datalist id="tick-values">
+								<option value="10" label="Low">
+								<option value="90" label="High">
+							</datalist>
+					</div>
+					<div class="column"></div>
 				</div>
-				<div class="player__buttons flex-center">
-					<div id="player__previous" class="player__previous">
-						<button><span class="icon-previous2"></span></button>
-					</div>
-					<div id="player__play" class="player__play">
-						<button><span class="icon-play3"></span></button>
-					</div>
-					<div id="player__next" class="player__next">
-						<button><span class="icon-next2"></span></button>
+				<div class="player__buttons flex-center row">
+					<div class="column"></div>
+					<header class="column flex-center">
+						<ul>
+							<li id="player__previous" class="player__previous"><button><span class="icon-previous2"></span></button></li>
+							<li id="player__play" class="player__play"><button><span class="icon-play3"></span></button></li>
+							<li id="player__next" class="player__next"><button><span class="icon-next2"></span></button></li>
+						</ul>
+					</header>
+					<div id="player__menu" class="player__menu column">
+						<button><span class="icon-list"></span></button>
 					</div>
 				</div>
 			</div>

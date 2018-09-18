@@ -19,10 +19,10 @@
     "controls";
   grid-template-columns: 100%;
   grid-template-rows:
-    100px
-    300px 
+    0px
+    0px 
     1fr
-    50px
+    0px
     120px;
   grid-gap: 6px 0px;
   height: calc(100vh - 12px); /* 2x the gap */
@@ -33,24 +33,23 @@
   display: grid;
 }
 
-.grid_header { 
+.player__header { 
   background-color: #FEBAC5;
   grid-area: header; 
 }
-.grid_main {
+.player__screen {
   background-color: #C2EAE9;
   grid-area: main; 
 }
-.grid_menu { 
+.player__menu {
   background-color: #FACFD7;
   grid-area: menu;
-
 }
-.grid_sidebar { 
+.player__sidebar {
   background-color: #6CD1EA;
   grid-area: sidebar;
 }
-.grid_controls {
+.player__controls {
   background-color: #444444;
   grid-area: controls;
 }
@@ -60,23 +59,24 @@
     grid-template-areas:
       "header header header"
       "menu main sidebar"
-      "controls controls controls"
-      "controls-sub controls-sub controls-sub";
+      "controls controls controls";
     grid-template-columns:
       0px 1fr 0px;
     grid-template-rows:
       0px
       1fr
-      120px;
+      160px;
   }
 }
-/* https://codepen.io/bunnyhawk/pen/wJgdQb */
+// https://codepen.io/bunnyhawk/pen/wJgdQb
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
 
 // Player Screen
 .player__screen {
   overflow-x: auto;
 
-  .player__scan-collection {
+  .player__screen-collection {
     @include flexbox;
   }
 
@@ -95,29 +95,57 @@
 
 // Player Controls
 .player__controls {
+  color: #ffffff;
+
   .player__timeline {
     output, label {
       padding: 0 0;
     }
 
-    .player__time{
-      width: 100px;
+    .player__time {
       text-align: center;
     }
     .player__seek-bar {
-      width: 80%;
       margin: 0 10px;
     }
-
   }
 
   .player__buttons {
     font-size: 2em;
-    
+
     * {
-        background-color: inherit;
-        border: none;
+      background-color: inherit;
+      color: #ffffff;
+      border: none;
     }
+
+    li {
+      display: inline-block;
+    }
+
   }
-  
+
+
+// https://davidwalsh.name/flexbox-layouts
+  .row {
+    display: flex;
+  }
+  .column {
+    margin: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+  }
+  .row .column:first-of-type {
+    flex-grow: 1;
+    flex-shrink: 2;
+    flex-basis: 22px;
+  }
+  .row:nth-of-type(1) .column:nth-of-type(2) {
+    flex-grow: 4;
+    flex-shrink: 4;
+    flex-basis: 66px;
+  }
+
+
 }
