@@ -74,7 +74,7 @@
 
 // Player Screen
 .player__screen {
-  overflow-x: auto;
+  overflow-x: hidden;
 
   .player__screen-collection {
     @include flexbox;
@@ -91,6 +91,10 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.player__screen-item .player__content {
+  display: block;
 }
 
 // Player Controls

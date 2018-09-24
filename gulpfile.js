@@ -29,6 +29,15 @@ gulp.task('css', function() {
 		.pipe(browserSync.stream())
 });
 
+gulp.task('js', function() {
+	return gulp.src([sourceDirectory + '/assets/js/**/*.js'])
+		.pipe(concat('main.js'))
+		.pipe(gulp.dest('dist/assets/js'))
+		.pipe(reload({
+			stream: true
+		}));
+});
+
 gulp.task('images', function() {
 	return gulp.src(sourceDirectory + '/assets/images/**/*')
 		.pipe(imagemin())
